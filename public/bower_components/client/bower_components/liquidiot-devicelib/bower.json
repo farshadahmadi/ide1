@@ -1,0 +1,21 @@
+{
+  "name": "liquidiot-devicelib",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Antti Nieminen <anttihn@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

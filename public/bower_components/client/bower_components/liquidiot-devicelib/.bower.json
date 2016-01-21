@@ -1,0 +1,31 @@
+{
+  "name": "liquidiot-devicelib",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Antti Nieminen <anttihn@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2d7778c907",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2d7778c907e80efef1ab2dc9d6425fa7bf130223"
+  },
+  "_source": "file:///home/ahn/git/liqu.git",
+  "_target": "*",
+  "_originalSource": "file:///home/ahn/git/liqu.git",
+  "_direct": true
+}

@@ -1,0 +1,31 @@
+{
+  "name": "liquidiot-devicelib",
+  "description": "",
+  "main": "dist/devicelib.js",
+  "authors": [
+    "Antti Nieminen <anttihn@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "https://github.com/ahn/liquidiot-devicelib",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "89019c24b6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "89019c24b6f2e28b95d772d5a42b7911c6422787"
+  },
+  "_source": "https://github.com/ahn/liquidiot-devicelib.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ahn/liquidiot-devicelib.git",
+  "_direct": true
+}
