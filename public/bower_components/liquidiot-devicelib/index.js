@@ -58,6 +58,7 @@ function Device(dev) {
 
   // ???
   this.id = dev.id || dev._id;
+  this.classes = dev.classes;
   this.data = dev;
 }
 
