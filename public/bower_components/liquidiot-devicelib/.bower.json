@@ -18,11 +18,11 @@
     "test",
     "tests"
   ],
-  "_release": "9534069ea2",
+  "_release": "8c94096319",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "9534069ea2dd382533e0bfc61aa085cf8b396dac"
+    "commit": "8c94096319c5fa608e78db02e57ad0367ce76eb5"
   },
   "_source": "file:///home/ahn/git/liqu.git",
   "_target": "*",
