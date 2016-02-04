@@ -56,11 +56,14 @@ function Device(dev) {
     });
   };
 
-  // ???
-  this.id = dev.id || dev._id;
-  this.classes = dev.classes;
-  this.apps = dev.apps;
-  this.data = dev;
+  // Copying all the attributes for the device
+  // and hope their names don't overlap with any of the methods above...
+  // TODO: something better?
+  for (var a in dev) {
+    this[a] = dev[a];
+
+  }
+  this.id = this.id || this._id;
 }
 
 /**
