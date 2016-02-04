@@ -9,7 +9,7 @@
   "moduleType": [
     "amd"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/ahn/liquidiot-devicelib",
   "private": true,
   "ignore": [
     "**/.*",
@@ -24,7 +24,7 @@
     "branch": "master",
     "commit": "fc4b621d45fc60f4b4dd06ea72db22d87ae56163"
   },
-  "_source": "file:///home/ahn/git/liqu.git",
+  "_source": "https://github.com/ahn/liquidiot-devicelib.git",
   "_target": "*",
-  "_originalSource": "file:///home/ahn/git/liqu.git"
+  "_originalSource": "https://github.com/ahn/liquidiot-devicelib.git"
 }
