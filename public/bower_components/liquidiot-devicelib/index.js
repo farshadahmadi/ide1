@@ -12,8 +12,8 @@ var DEVICEMAN_URL = 'http://130.230.142.101:3000';
 function queryDevices(devicequery, appquery) {
   return new Promise(function(resolve, reject) {
     var qs = {};
-    if (devicequery) qs.devices = devicequery;
-    if (appquery) qs.apps = appquery;
+    if (devicequery) qs.device = devicequery;
+    if (appquery) qs.app = appquery;
     request({
       method: 'GET',
       url: DEVICEMAN_URL,
