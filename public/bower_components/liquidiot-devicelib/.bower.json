@@ -18,11 +18,11 @@
     "test",
     "tests"
   ],
-  "_release": "fc4b621d45",
+  "_release": "f58a83b6dd",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "fc4b621d45fc60f4b4dd06ea72db22d87ae56163"
+    "commit": "f58a83b6dd7f27e1ec3cedea1113253c34f34ed8"
   },
   "_source": "https://github.com/ahn/liquidiot-devicelib.git",
   "_target": "*",

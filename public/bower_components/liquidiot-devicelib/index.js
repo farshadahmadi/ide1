@@ -9,12 +9,15 @@ var DEVICEMAN_URL = 'http://130.230.142.101:3000';
  *
  * Returns a promise.
  */
-function queryDevices(query) {
+function queryDevices(devicequery, appquery) {
   return new Promise(function(resolve, reject) {
+    var qs = {};
+    if (devicequery) qs.devices = devicequery;
+    if (appquery) qs.apps = appquery;
     request({
       method: 'GET',
       url: DEVICEMAN_URL,
-      qs: {q: query},
+      qs: qs,
       json: true
     },
     function(err, res, body) {
@@ -73,8 +76,8 @@ function Device(dev) {
  * the devices in the set, such as http(path, opts)
  *
  */
-function devices(query) {
-  var p = queryDevices(query);
+function devices(devicequery, appquery) {
+  var p = queryDevices(devicequery, appquery);
 
   function forEach(f) {
     p.then(function(devices) {
