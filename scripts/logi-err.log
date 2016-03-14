@@ -1,0 +1,37 @@
+fs.js:844
+  return binding.stat(pathModule._makeLong(path));
+                 ^
+
+Error: ENOENT: no such file or directory, stat '/home/ahn/git/koodain/public/favicon.ico'
+    at Error (native)
+    at Object.fs.statSync (fs.js:844:18)
+    at favicon (/home/ahn/git/koodain/node_modules/serve-favicon/index.js:47:15)
+    at module.exports (/home/ahn/git/koodain/server/config/express.js:47:13)
+    at Object.<anonymous> (/home/ahn/git/koodain/server/app.js:36:28)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+    at Function.Module._load (module.js:300:12)
+    at Function.Module.runMain (module.js:441:10)
+    at startup (node.js:134:18)
+    at node.js:962:3
+
+npm ERR! Linux 3.16.0-38-generic
+npm ERR! argv "/usr/bin/nodejs" "/usr/bin/npm" "start"
+npm ERR! node v4.3.2
+npm ERR! npm  v2.14.12
+npm ERR! code ELIFECYCLE
+npm ERR! koodain@0.0.0 start: `node server/app.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the koodain@0.0.0 start script 'node server/app.js'.
+npm ERR! This is most likely a problem with the koodain package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node server/app.js
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls koodain
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/ahn/git/koodain/scripts/npm-debug.log
