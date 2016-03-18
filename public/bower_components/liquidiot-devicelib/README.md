@@ -14,7 +14,9 @@ JavaScript library for querying and interacting with LiquidIOT devices.
 ```javascript
 var devicelib = require('liquidiot-devicelib');
 
-devicelib.devices('*').http('/app');
+var dm = devicelib('http://url.to.liquidiot.devicemanager');
+
+dm.devices('*').http('/app');
 ```
 
 

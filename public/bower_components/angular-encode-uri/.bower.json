@@ -25,6 +25,5 @@
   },
   "_source": "git://github.com/rubenv/angular-encode-uri.git",
   "_target": "~1.0.0",
-  "_originalSource": "angular-encode-uri",
-  "_direct": true
+  "_originalSource": "angular-encode-uri"
 }

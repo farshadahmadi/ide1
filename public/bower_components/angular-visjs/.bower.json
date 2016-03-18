@@ -35,6 +35,5 @@
   },
   "_source": "git://github.com/visjs/angular-visjs.git",
   "_target": "~4.0.2",
-  "_originalSource": "angular-visjs",
-  "_direct": true
+  "_originalSource": "angular-visjs"
 }
