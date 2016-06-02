@@ -1,22 +1,22 @@
 
 function Agent() {
-  this.main;
-  this.initialize;
-  this.terminate;
+  this.work = "";
+  this.preStopWork = "";
+  this.preStartWork = "";
   this.timer = true;
   this.repeat = true;
   this.interval = 1000;
 }
 
 Agent.prototype.s = function() {
-    this.createInterval(this.main, function(restartMainMessage){
+    this.createInterval(this.work, function(restartMainMessage){
         if(restartMainMessage){
             console.log(restartMainMessage);
         }
         if(this.timer) {
             this.s();
         } else {
-            this.terminate(function(stopExecutionMessage){
+            this.preStopWork(function(stopExecutionMessage){
                 if(stopExecutionMessage){
                     console.log(stopExecutionMessage);
                 }
@@ -29,18 +29,19 @@ Agent.prototype.createInterval = function(f, param, interval) {
     setTimeout( function() {f(param);}, interval );
 }
 
-Agent.prototype.configureInterval = function(repeat, interval) {
+Agent.prototype.setWork = function(mainFunc, repeat, interval) {
+  this.work = mainFunc;
   this.repeat = repeat;
   this.interval = interval;
 }
 
 Agent.prototype.start = function() {
-  this.initialize(function(startMainMessage){
+  this.preStartWork(function(startMainMessage){
       if(startMainMessage){
           console.log(startMainMessage);
       }
           this.timer = true;
-          this.main(function(restartMainMessage){
+          this.work(function(restartMainMessage){
               if(restartMainMessage){
                   console.log(restartMainMessage);
               }
@@ -53,10 +54,18 @@ Agent.prototype.start = function() {
   }.bind(this));
 }
 
+Agent.prototype.setPreStopWork = function(preStopFunc) {
+  this.preStopWork = preStopFunc;
+}
+
+Agent.prototype.setPreStartWork = function(preStartFunc) {
+  this.preStartWork = preStartFunc;
+}
+
 Agent.prototype.stop = function() {
     this.timer = false;
     if(!this.repeat) {
-        this.terminate(function(stopExecutionMessage){
+        this.preStopWork(function(stopExecutionMessage){
             if(stopExecutionMessage){
                 console.log(stopExecutionMessage);
             }
@@ -65,4 +74,3 @@ Agent.prototype.stop = function() {
 }
 
 module.exports = Agent;
-
