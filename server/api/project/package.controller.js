@@ -97,7 +97,7 @@ function sendPackage(pkgBuffer, url) {
       }
     }
   };
-  return rp.post({url: url, formData: formData, timeout: 20000});
+  return rp.post({url: url, formData: formData});
 }
 
 
@@ -153,12 +153,10 @@ function create(name) {
         return Promise.all(deployment.selectedDevices.map(function(device) {
           return sendPackage(pkgBuffer, device.url + '/app')
             .then(function(res){
-              console.log('success dep');
               numSuccessDeps++;
               return res;
             })
             .catch(function(err){
-              console.log('failure dep');
               numFailDeps++;
               return err;
             });
@@ -175,8 +173,6 @@ function create(name) {
 
 // deploy to a device.
 exports.deploys = function(req, res) {
-
-  console.log('deploy request received');
 
   var deps = req.body.deployments;
 
