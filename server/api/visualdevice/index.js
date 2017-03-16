@@ -1,10 +1,10 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./visualdevice.controller');
+var hosts = require('./visualdevice.controller');
 
 var router = express.Router();
 
-router.get('/', controller.index);
+router.get('/', hosts.list);
 
 module.exports = router;
