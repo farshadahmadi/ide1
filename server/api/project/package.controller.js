@@ -157,9 +157,8 @@ function create(name) {
               return res;
             })
             .catch(function(err){
-              console.log('eeee: ' + err.response.body);
               numFailDeps++;
-              return err.response.body;
+              return err;
             });
         }))
         .then(function(res){
@@ -198,8 +197,6 @@ exports.deploys = function(req, res) {
         result: results
       };
 
-      console.log('res: ' + JSON.stringify(finalResult));
-      
       res.status(200).json(finalResult);
     })
     .catch(errorHandler(res));

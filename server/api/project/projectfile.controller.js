@@ -127,7 +127,6 @@ function createFile(filename, content) {
 
 function writeFile(filename, content) {
   content = content || '';
-  console.log('2: ' + content);
   return fsp.writeFileAsync(filename, content, {flag: 'w'}).catch(function(err){
     throw err;
   });
@@ -191,7 +190,6 @@ function addProjectFiles(filenames, project, vars) {
 
   var ps = filenames.map(function(f) {
     return fsp.readFileAsync(f).then(function(data) {
-      //console.log('1: ' + data.toString().split("\n"));
       return {
         name: f,
         data: data,
@@ -199,8 +197,6 @@ function addProjectFiles(filenames, project, vars) {
     }).then(function (f) {
       var to = path.resolve(projectDir, path.basename(f.name));
       var content = ejs.render(f.data.toString(), vars);
-      // remove the last line break \n which is added automatically by readFileAsync function !!!
-      content = content.replace(/\n$/, "");
       return writeFile(to, content);
     });
   });
