@@ -142,3 +142,10 @@ exports.create = function (req, res) {
       }).catch(errorHandler(res));
   })
 }
+
+// remove a host
+exports.remove = function(req, res){
+  var hostName = req.params.host;
+  console.log(hostName);
+  res.status(200).json({host: hostName});
+}
