@@ -26,8 +26,13 @@ To install the package using bower and save as a dependency use...
 bower install angular-ui-notification --save
 ```  
 
+To install via NPM:
+```bash
+npm install angular-ui-notification --save
+```
+
 ## Usage
- [Heres a plunker demo](http://plnkr.co/edit/5Gk8UVvzUsjyof7Gxsua?p=preview)
+ [Heres a plunker demo](http://plnkr.co/edit/h08qQF2qlVE3arERpdfi?p=preview)
 
   
 In your html/template add 
@@ -78,6 +83,9 @@ angular.module('notificationTest').controller('notificationController', function
   // Success
   Notification.success('Success notification');
   
+  // Message with custom type
+  Notification({message: 'Warning notification'}, 'warning');
+
   // With Title
   Notification({message: 'Primary notification', title: 'Primary notification'});
   
@@ -121,6 +129,10 @@ The options list:
 | positionY         | "top", "bottom"           | "top"                          | Vertical position of the message                                         |
 | replaceMessage    | true, false               | false                          | If true every next appearing message replace old messages                |
 | templateUrl       | Any string                | "angular-ui-notification.html" | Custom template filename (URL)                                           |
+| onClose           | Any function              | undefined                      | Callback to execute when a notification element is closed. Callback receives the element as its argument. |
+| closeOnClick      | true, false               | true                           | If true, messages are closed on click                                    |
+| maxCount          | Any integer               | 0                              | Show only [maxCount] last messages. Old messages will be killed. 0 - do not kill |
+| priority          | Any integer               | 10                             | The highier the priority is, the higher the notification will be         |
 
 Also you can pass the "scope" option. This is an angular scope option Notification scope will be inherited from. This option can be passed only in the methods. The default value is $rootScope
 
@@ -149,10 +161,11 @@ Also you can pass the "scope" option. This is an angular scope option Notificati
 | positionY      | "top", "bottom"                                  | `"top"`                           |                                                                                                        |
 | positionX      | "right", "left", "center"                        | `"right"                          |                                                                                                        |
 | replaceMessage | *Boolean*                                        | `false`                           | If true this message will replace old(er) message(s)                                                   |
+| closeOnClick      | true, false               | true                           | If true, the message is closed on click                                  |
 
 #### Returning value
 
-Every "show" method returns a promise resolves a notification scope with methods:
+Every "show" method returns a promise that resolves a notification scope with these methods:
 
 |          Method name           |                                                   Description                                                    |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------|
